@@ -1,0 +1,418 @@
+<fix major="4" minor="4">
+    <header>
+        <field name="BeginString" required="Y"/>
+        <field name="BodyLength" required="Y"/>
+        <field name="MsgType" required="Y"/>
+        <field name="SenderCompID" required="Y"/>
+        <field name="SendingTime" required="Y"/>
+    </header>
+    <trailer>
+        <field name="SignatureLength" required="N"/>
+        <field name="Signature" required="N"/>
+        <field name="CheckSum" required="Y"/>
+    </trailer>
+    <messages>
+        <message name="Heartbeat" msgtype="0" msgcat="admin">
+            <field name="TestReqID" required="N"/>
+        </message>
+        <message name="Logon" msgtype="A" msgcat="admin">
+            <field name="Username" required="N"/>
+            <field name="Password" required="N"/>
+            <field name="Status" required="Y"/>
+        </message>
+        <message name="AutionMatch" msgtype="EP" msgcat="admin">
+            <field name="ActionType" required="N"/>
+            <field name="Symbol" required="N"/>
+            <field name="MatchPrice" required="N"/>
+            <field name="MatchQtty" required="N"/>
+        </message>
+        <message name="BoardInfo" msgtype="BI" msgcat="admin">
+            <field name="BoardCode" required="N"/>
+            <field name="BoardStatus" required="N"/>
+            <field name="TradingSessionID" required="N"/>
+            <field name="TradSecStatus" required="N"/>
+            <field name="Name" required="N"/>
+            <field name="Shortname" required="N"/>
+            <field name="TradingDate" required="N"/>
+            <field name="Time" required="N"/>
+            <field name="TotalTrade" required="N"/>
+            <field name="TotalStock" required="N"/>
+            <field name="numSymbolAdvances" required="N"/>
+            <field name="numSymbolNochange" required="N"/>
+            <field name="numSymbolDeclines" required="N"/>
+            <field name="DateNo" required="N"/>
+            <field name="totalNormalTradedQttyRd" required="N"/>
+            <field name="totalNormalTradedValueRd" required="N"/>
+            <field name="totalNormalTradedQttyOd" required="N"/>
+            <field name="totalNormalTradedValueOd" required="N"/>
+            <field name="totalPTTradedQtty" required="N"/>
+            <field name="totalPTTradedValue" required="N"/>
+            <field name="MarketCode" required="N"/>
+        </message>
+        <message name="DerivativesInfo" msgtype="DI" msgcat="admin">
+            <field name="Symbol" required="N"/>
+            <field name="SymbolID" required="N"/>
+            <field name="Underlying" required="N"/>
+            <field name="BoardCode" required="N"/>
+            <field name="TradingSessionID" required="N"/>
+            <field name="TradeSesStatus" required="N"/>
+            <field name="SecurityTradingStatus" required="N"/>
+            <field name="ListingStatus" required="N"/>
+            <field name="SecurityType" required="N"/>
+            <field name="OpenInterest" required="N"/>
+            <field name="OpenInterestChange" required="N"/>
+            <field name="FirstTradingDate" required="N"/>
+            <field name="LastTradingDate" required="N"/>
+            <field name="BestBidPrice" required="N"/>
+            <field name="BestBidQtty" required="N"/>
+            <field name="BestOfferPrice" required="N"/>
+            <field name="BestOfferQtty" required="N"/>
+            <field name="TotalBidQtty" required="N"/>
+            <field name="TotalOfferQtty" required="N"/>
+            <field name="BasicPrice" required="N"/>
+            <field name="FloorPrice" required="N"/>
+            <field name="CeilingPrice" required="N"/>
+            <field name="MatchPrice" required="N"/>
+            <field name="MatchQtty" required="N"/>
+            <field name="OpenPrice" required="N"/>
+            <field name="PriorOpenPrice" required="N"/>
+            <field name="OpenQtty" required="N"/>
+            <field name="ClosePrice" required="N"/>
+            <field name="PriorClosePrice" required="N"/>
+            <field name="CloseQtty" required="N"/>
+            <field name="TotalVolumeTraded" required="N"/>
+            <field name="TotalValueTraded" required="N"/>
+            <field name="TradingDate" required="N"/>
+            <field name="Time" required="N"/>
+            <field name="TradingUnit" required="N"/>
+            <field name="DateNo" required="N"/>
+            <field name="CurrentPrice" required="N"/>
+            <field name="CurrentQtty" required="N"/>
+            <field name="HighestPrice" required="N"/>
+            <field name="LowestPrice" required="N"/>
+            <field name="MatchValue" required="N"/>
+            <field name="OfferCount" required="N"/>
+            <field name="BidCount" required="N"/>
+            <field name="NM_TotalTradedQtty" required="N"/>
+            <field name="NM_TotalTradedValue" required="N"/>
+            <field name="PT_MatchQtty" required="N"/>
+            <field name="PT_MatchPrice" required="N"/>
+            <field name="PT_TotalTradedQtty" required="N"/>
+            <field name="PT_TotalTradedValue" required="N"/>
+            <field name="NM_BuyForeignQtty" required="N"/>
+            <field name="PT_BuyForeignQtty" required="N"/>
+            <field name="BuyForeignQtty" required="N"/>
+            <field name="NM_BuyForeignValue" required="N"/>
+            <field name="PT_BuyForeignValue" required="N"/>
+            <field name="BuyForeignValue" required="N"/>
+            <field name="NM_SellForeignQtty" required="N"/>
+            <field name="PT_SellForeignQtty" required="N"/>
+            <field name="SellForeignQtty" required="N"/>
+            <field name="NM_SellForeignValue" required="N"/>
+            <field name="PT_SellForeignValue" required="N"/>
+            <field name="SellForeignValue" required="N"/>
+        </message>
+        <message name="Index" msgtype="I" msgcat="admin">
+            <field name="IDIndex" required="N"/>
+            <field name="IndexCode" required="N"/>
+            <field name="Value" required="N"/>
+            <field name="CalTime" required="N"/>
+            <field name="Change" required="N"/>
+            <field name="RatioChange" required="N"/>
+            <field name="TotalQtty" required="N"/>
+            <field name="TotalValue" required="N"/>
+            <field name="TradingDate" required="N"/>
+            <field name="CurrentStatus" required="N"/>
+            <field name="TotalStock" required="N"/>
+            <field name="PriorIndexVal" required="N"/>
+            <field name="HighestIndex" required="N"/>
+            <field name="LowestIndex" required="N"/>
+            <field name="CloseIndex" required="N"/>
+            <field name="TypeIndex" required="N"/>
+            <field name="IndexName" required="N"/>
+        </message>
+        <message name="Stock" msgtype="S" msgcat="admin">
+            <field name="IDIndex" required="N"/>
+            <field name="IndexCode" required="N"/>
+            <field name="IDSymbol" required="N"/>
+            <field name="Symbol" required="N"/>
+            <field name="TotalQtty" required="N"/>
+            <field name="Weighted" required="N"/>
+            <field name="AddDate" required="N"/>
+        </message>
+        <message name="StockInfo" msgtype="SI" msgcat="admin">
+            <field name="Symbol" required="N"/>
+            <field name="SymbolID" required="N"/>
+            <field name="BoardCode" required="N"/>
+            <field name="TradingSessionID" required="N"/>
+            <field name="SecurityTradingStatus" required="N"/>
+            <field name="ListingStatus" required="N"/>
+            <field name="SecurityType" required="N"/>
+            <field name="IssueDate" required="N"/>
+            <field name="Issuer" required="N"/>
+            <field name="SecurityDesc" required="N"/>
+            <field name="BestBidPrice" required="N"/>
+            <field name="BestBidQtty" required="N"/>
+            <field name="BestOfferPrice" required="N"/>
+            <field name="BestOfferQtty" required="N"/>
+            <field name="TotalBidQtty" required="N"/>
+            <field name="TotalOfferQtty" required="N"/>
+            <field name="BasicPrice" required="N"/>
+            <field name="FloorPrice" required="N"/>
+            <field name="CeilingPrice" required="N"/>
+            <field name="FloorPricePT" required="N"/>
+            <field name="CeilingPricePT" required="N"/>
+            <field name="Parvalue" required="N"/>
+            <field name="MatchPrice" required="N"/>
+            <field name="MatchQtty" required="N"/>
+            <field name="OpenPrice" required="N"/>
+            <field name="PriorOpenPrice" required="N"/>
+            <field name="ClosePrice" required="N"/>
+            <field name="PriorClosePrice" required="N"/>
+            <field name="TotalVolumeTraded" required="N"/>
+            <field name="TotalValueTraded" required="N"/>
+            <field name="MidPx" required="N"/>
+            <field name="TradingDate" required="N"/>
+            <field name="Time" required="N"/>
+            <field name="TradingUnit" required="N"/>
+            <field name="TotalListingQtty" required="N"/>
+            <field name="DateNo" required="N"/>
+            <field name="AdjustQtty" required="N"/>
+            <field name="ReferenceStatus" required="N"/>
+            <field name="AdjustRate" required="N"/>
+            <field name="DividentRate" required="N"/>
+            <field name="CurrentPrice" required="N"/>
+            <field name="CurrentQtty" required="N"/>
+            <field name="HighestPrice" required="N"/>
+            <field name="LowestPrice" required="N"/>
+            <field name="PriorPrice" required="N"/>
+            <field name="MatchValue" required="N"/>
+            <field name="OfferCount" required="N"/>
+            <field name="BidCount" required="N"/>
+            <field name="NM_TotalTradedQtty" required="N"/>
+            <field name="NM_TotalTradedValue" required="N"/>
+            <field name="PT_MatchQtty" required="N"/>
+            <field name="PT_MatchPrice" required="N"/>
+            <field name="PT_TotalTradedQtty" required="N"/>
+            <field name="PT_TotalTradedValue" required="N"/>
+            <field name="TotalBuyTradingQtty" required="N"/>
+            <field name="BuyCount" required="N"/>
+            <field name="TotalBuyTradingValue" required="N"/>
+            <field name="TotalSellTradingQtty" required="N"/>
+            <field name="SellCount" required="N"/>
+            <field name="TotalSellTradingValue" required="N"/>
+            <field name="BuyForeignQtty" required="N"/>
+            <field name="BuyForeignValue" required="N"/>
+            <field name="SellForeignQtty" required="N"/>
+            <field name="SellForeignValue" required="N"/>
+            <field name="RemainForeignQtty" required="N"/>
+            <field name="MaturityDate" required="N"/>
+            <field name="CouponRate" required="N"/>
+            <field name="TotalBidQtty_OD" required="N"/>
+            <field name="TotalOfferQtty_OD" required="N"/>
+        </message>
+        <message name="TopNPrice" msgtype="TP" msgcat="admin">
+            <field name="Symbol" required="N"/>
+            <field name="BoardCode" required="N"/>
+            <group name="NoTopPrice" required="N">
+                <field name="NumTopPrice" required="N"/>
+                <field name="BestBidPrice" required="N"/>
+                <field name="BestBidQtty" required="N"/>
+                <field name="BestOfferPrice" required="N"/>
+                <field name="BestOfferQtty" required="N"/>
+            </group>
+        </message>
+        <message name="TopPriceOddLot" msgtype="PO" msgcat="admin">
+            <field name="Symbol" required="N"/>
+            <field name="BoardCode" required="N"/>
+            <field name="BestBidPrice" required="N"/>
+            <field name="BestBidQtty" required="N"/>
+            <field name="BestOfferPrice" required="N"/>
+            <field name="BestOfferQtty" required="N"/>
+            <field name="TotalBidQtty_OD" required="N"/>
+            <field name="TotalOfferQtty" required="N"/>
+            <field name="TotalOfferQtty_OD" required="N"/>
+            <field name="OfferPrice_2" required="N"/>
+            <field name="OfferQtty_2" required="N"/>
+            <field name="OpenPrice" required="N"/>
+            <field name="OfferQtty_3" required="N"/>
+        </message>
+    </messages>
+    <components>
+    </components>
+    <fields>
+        <field number="35" name="MsgType" type="STRING">
+            <value enum="0" description="HEARTBEAT"/>
+            <value enum="EP" description="AUTIONMATCH"/>
+            <value enum="BI" description="BOARDINFO"/>
+            <value enum="DI" description="DERIVATIVESINFO"/>
+            <value enum="I" description="INDEX"/>
+            <value enum="S" description="STOCK"/>
+            <value enum="SI" description="STOCKINFO"/>
+            <value enum="TP" description="TOPNPRICE"/>
+            <value enum="PO" description="TOPPRICEODDLOT"/>
+            <value enum="A" description="LOGON"/>
+        </field>
+        <field number="89" name="Signature" type="DATA"/>
+        <field number="10" name="CheckSum" type="STRING"/>
+        <field number="340" name="TradeSesStatus" type="STRING"/>
+        <field number="93" name="SignatureLength" type="LENGTH"/>
+        <field number="49" name="SenderCompID" type="STRING"/>
+        <field number="52" name="SendingTime" type="UTCTIMESTAMP"/>
+        <field number="8" name="BeginString" type="STRING"/>
+        <field number="9" name="BodyLength" type="LENGTH"/>
+        <field number="112" name="TestReqID" type="STRING"/>
+        <field number="553" name="Username" type="STRING"/>
+        <field number="554" name="Password" type="STRING"/>
+        <field number="552" name="Status" type="STRING"/>
+        <field number="33" name="ActionType" type="CHAR"/>
+        <Value enum="A" description="khớp chính"/>
+        <Value enum="M" description="tạm khớp"/>
+        <field number="55" name="Symbol" type="STRING"/>
+        <field number="31" name="Price" type="INT"/>
+        <field number="32" name="Qtty" type="INT"/>
+        <field number="425" name="BoardCode" type="STRING"/>
+        <field number="426" name="BoardStatus" type="CHAR"/>
+        <value enum="A" description="Đang hoạt động"/>
+        <value enum="C" description="Ngừng hoạt động"/>
+        <value enum="P" description="Tạm dừng hoạt động"/>
+        <field number="336" name="TradingSessionID" type="STRING"/>
+        <field number="340" name="TradSecStatus" type="INT"/>
+        <value enum="0" description="Chưa bắt đầu"/>
+        <value enum="1" description="Bình thường"/>
+        <value enum="2" description="Tạm dừng"/>
+        <value enum="3" description="Kết thúc nhận lệnh phiên hiện tại do RamdomEnd"/>
+        <value enum="4" description="Tạm dừng do CB"/>
+        <value enum="5" description="Phiên định kỳ sau CB"/>
+        <value enum="6" description="Chứng khoán đang Prolong"/>
+        <value enum="13" description="Kết thúc nhận lệnh của ngày giao dịch hiện tại"/>
+        <value enum="90" description="Thị trường đang ở trạng thái chờ lệnh"/>
+        <value enum="97" description="Đóng của thị trường"/>
+        <field number="421" name="Name" type="STRING"/>
+        <field number="422" name="Shortname" type="STRING"/>
+        <field number="388" name="TradingDate" type="UTCTIMESTAMP"/>
+        <field number="399" name="Time" type="STRING"/>
+        <field number="270" name="TotalTrade" type="FLOAT"/>
+        <field number="251" name="numSymbolAdvances" type="INT"/>
+        <field number="252" name="numSymbolNochange" type="INT"/>
+        <field number="253" name="numSymbolDeclines" type="INT"/>
+        <field number="17" name="DateNo" type="INT"/>
+        <field number="220" name="totalNormalTradedQttyRd" type="FLOAT"/>
+        <field number="221" name="totalNormalTradedValueRd" type="FLOAT"/>
+        <field number="210" name="totalNormalTradedQttyOd" type="FLOAT"/>
+        <field number="211" name="totalNormalTradedValueOd" type="FLOAT"/>
+        <field number="240" name="totalPTTradedQtty" type="FLOAT"/>
+        <field number="241" name="totalPTTradedValue" type="FLOAT"/>
+        <field number="341" name="MarketCode" type="STRING"/>
+        <field number="15" name="SymbolID" type="FLOAT"/>
+        <field number="800" name="Underlying" type="STRING"/>
+        <field number="326" name="SecurityTradingStatus" type="STRING"/>
+        <field number="327" name="ListingStatus" type="STRING"/>
+        <field number="167" name="SecurityType" type="STRING"/>
+        <field number="801" name="OpenInterest" type="FLOAT"/>
+        <field number="8011" name="OpenInterestChange" type="FLOAT"/>
+        <field number="802" name="FirstTradingDate" type="UTCTIMESTAMP"/>
+        <field number="803" name="LastTradingDate" type="UTCTIMESTAMP"/>
+        <field number="132" name="BestBidPrice" type="FLOAT"/>
+        <field number="1321" name="BestBidQtty" type="FLOAT"/>
+        <field number="133" name="BestOfferPrice" type="FLOAT"/>
+        <field number="1331" name="BestOfferQtty" type="FLOAT"/>
+        <field number="134" name="TotalBidQtty" type="FLOAT"/>
+        <field number="135" name="TotalOfferQtty" type="FLOAT"/>
+        <field number="260" name="BasicPrice" type="FLOAT"/>
+        <field number="333" name="FloorPrice" type="FLOAT"/>
+        <field number="332" name="CeilingPrice" type="FLOAT"/>
+        <field number="137" name="OpenPrice" type="FLOAT"/>
+        <field number="138" name="PriorOpenPrice" type="FLOAT"/>
+        <field number="804" name="OpenQtty" type="FLOAT"/>
+        <field number="139" name="ClosePrice" type="FLOAT"/>
+        <field number="140" name="PriorClosePrice" type="FLOAT"/>
+        <field number="805" name="CloseQtty" type="FLOAT"/>
+        <field number="387" name="TotalVolumeTraded" type="FLOAT"/>
+        <field number="3871" name="TotalValueTraded" type="FLOAT"/>
+        <field number="400" name="TradingUnit" type="INT"/>
+        <field number="255" name="CurrentPrice" type="FLOAT"/>
+        <field number="2551" name="CurrentQtty" type="FLOAT"/>
+        <field number="266" name="HighestPrice" type="FLOAT"/>
+        <field number="2661" name="LowestPrice" type="FLOAT"/>
+        <field number="310" name="MatchValue" type="FLOAT"/>
+        <field number="320" name="OfferCount" type="FLOAT"/>
+        <field number="321" name="BidCount" type="FLOAT"/>
+        <field number="391" name="NM_TotalTradedQtty" type="FLOAT"/>
+        <field number="392" name="NM_TotalTradedValue" type="FLOAT"/>
+        <field number="393" name="PT_MatchQtty" type="FLOAT"/>
+        <field number="32" name="MatchQtty" type="FLOAT"/>
+        <field number="3931" name="PT_MatchPrice" type="FLOAT"/>
+        <field number="31" name="MatchPrice" type="FLOAT"/>
+        <field number="394" name="PT_TotalTradedQtty" type="FLOAT"/>
+        <field number="9141" name="PT_TotalTradedValue" type="FLOAT"/>
+        <field number="814" name="NM_BuyForeignQtty" type="FLOAT"/>
+        <field number="815" name="PT_BuyForeignQtty" type="FLOAT"/>
+        <field number="397" name="BuyForeignQtty" type="FLOAT"/>
+        <field number="8141" name="NM_BuyForeignValue" type="FLOAT"/>
+        <field number="8151" name="PT_BuyForeignValue" type="FLOAT"/>
+        <field number="3971" name="BuyForeignValue" type="FLOAT"/>
+        <field number="816" name="NM_SellForeignQtty" type="FLOAT"/>
+        <field number="817" name="PT_SellForeignQtty" type="FLOAT"/>
+        <field number="398" name="SellForeignQtty" type="FLOAT"/>
+        <field number="8161" name="NM_SellForeignValue" type="FLOAT"/>
+        <field number="8171" name="PT_SellForeignValue" type="FLOAT"/>
+        <field number="3981" name="SellForeignValue" type="FLOAT"/>
+        <field number="1" name="IDIndex" type="INT"/>
+        <field number="2" name="IndexCode" type="STRING"/>
+        <field number="3" name="Value" type="FLOAT"/>
+        <field number="4" name="CalTime" type="STRING"/>
+        <field number="5" name="Change" type="FLOAT"/>
+        <field number="6" name="RatioChange" type="FLOAT"/>
+        <field number="7" name="TotalQtty" type="FLOAT"/>
+        <field number="14" name="TotalValue" type="FLOAT"/>
+        <field number="21" name="CurrentStatus" type="INT"/>
+        <value enum="1" description="Bình thường"/>
+        <field number="22" name="TotalStock" type="FLOAT"/>
+        <field number="23" name="PriorIndexVal" type="FLOAT"/>
+        <field number="24" name="HighestIndex" type="FLOAT"/>
+        <field number="25" name="LowestIndex" type="FLOAT"/>
+        <field number="26" name="CloseIndex" type="FLOAT"/>
+        <field number="3962" name="TotalSellTradingValue" type="FLOAT"/>
+        <field number="27" name="TypeIndex" type="INT"/>
+        <value enum="0" description="Chỉ số thị trường"/>
+        <value enum="1" description="Chỉ số bảng"/>
+        <value enum="2" description="Chỉ số phức hợp"/>
+        <value enum="3" description="Chỉ số nghành"/>
+        <value enum="4" description="Chỉ số Top"/>
+        <value enum="5" description="Chỉ số TRI"/>
+        <value enum="6" description="Chỉ số DPI"/>
+        <field number="18" name="IndexName" type="STRING"/>
+        <field number="15" name="IDSymbol" type="INT"/>
+        <field number="12" name="Weighted" type="FLOAT"/>
+        <field number="28" name="AddDate" type="UTCTIMESTAMP"/>
+        <field number="225" name="IssueDate" type="UTCTIMESTAMP"/>
+        <field number="106" name="Issuer" type="STRING"/>
+        <field number="107" name="SecurityDesc" type="STRING"/>
+        <field number="3331" name="FloorPricePT" type="INT"/>
+        <field number="3321" name="CeilingPricePT" type="INT"/>
+        <field number="334" name="Parvalue" type="INT"/>
+        <field number="631" name="MidPx" type="INT"/>
+        <field number="109" name="TotalListingQtty" type="FLOAT"/>
+        <field number="230" name="AdjustQtty" type="INT"/>
+        <field number="232" name="ReferenceStatus" type="STRING"/>
+        <field number="233" name="AdjustRate" type="INT"/>
+        <field number="244" name="DividentRate" type="INT"/>
+        <field number="277" name="PriorPrice" type="INT"/>
+        <field number="395" name="TotalBuyTradingQtty" type="INT"/>
+        <field number="3951" name="BuyCount" type="DOUBLE"/>
+        <field number="396" name="TotalBuyTradingValue" type="DOUBLE"/>
+        <field number="3961" name="TotalSellTradingQtty" type="INT"/>
+        <field number="3962" name="SellCount" type="FLOAT"/>
+        <field number="3301" name="RemainForeignQtty" type="UTCTIMESTAMP"/>
+        <field number="541" name="MaturityDate" type="FLOAT"/>
+        <field number="223" name="CouponRate" type="FLOAT"/>
+        <field number="1341" name="TotalBidQtty_OD" type="FLOAT"/>
+        <field number="1351" name="TotalOfferQtty_OD" type=""/>
+        <field number="555" name="NoTopPrice" type="INT"/>
+        <field number="556" name="NumTopPrice" type="INT"/>
+        <field number="136" name="OfferPrice_2" type="DOUBLE"/>
+        <field number="1361" name="OfferQtty_2" type="DOUBLE"/>
+        <field number="1371" name="OfferQtty_3" type="DOUBLE"/>
+    </fields>
+</fix>
